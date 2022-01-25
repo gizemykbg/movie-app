@@ -1,17 +1,18 @@
 import React from "react";
 import { ErrorMessage, useField } from "formik";
+import { CardBody, CardFieldset, CardInput } from "./styles/CardStyles";
 
 export const TextField = ({ label, ...props }) => {
   const [field] = useField(props);
 
   return (
-    <div>
-      <div>
+    <CardBody>
+      <CardFieldset>
         <label htmlFor="field.name">{label}</label>
-        <input {...field} {...props} autoComplete="off" />
-      </div>
+        <CardInput {...field} {...props} autoComplete="off" />
+      </CardFieldset>
       <ErrorMessage component="div" name={field.name} className="error" />
-    </div>
+    </CardBody>
   );
 };
 

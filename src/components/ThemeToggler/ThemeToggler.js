@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
-import { Switch } from "@material-ui/core/Switch";
+import Switch from "@material-ui/core/Switch";
 // import { IconButton } from "@material-ui/core";
 
 function ThemeToggler({ value }) {
@@ -9,9 +9,9 @@ function ThemeToggler({ value }) {
   const [checked, setChecked] = useState(false);
   // const [navToggle, setNavToggle] = useState(false);
 
-  // useEffect(()=>{
-  //   document.documentElement.className = theme;
-  // }, [theme]);
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const themeToggler = () => {
     if (theme === "light-theme") {

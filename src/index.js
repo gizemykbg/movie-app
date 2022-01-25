@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import store, { persistor } from "./redux/store";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle";
 import { PersistGate } from "redux-persist/integration/react";
 import GlobalStyle from "./components/styles/GlobalStyle";
 

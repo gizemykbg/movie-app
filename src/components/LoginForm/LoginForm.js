@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "../TextField";
+import { CardHeading, CardWrapper, CardButton } from "../styles/CardStyles";
 
 function LoginForm({ error }) {
   const [details, setDetails] = useState({ username: "", password: "" });
@@ -26,35 +27,37 @@ function LoginForm({ error }) {
     <Formik validationSchema={validate}>
       {(formik) => (
         <div>
-          <h1>Login</h1>
-          {error !== "" ? <div className="error">{error}</div> : ""}
-          <Form onSubmit={submitHandler}>
-            <TextField
-              label="Username"
-              name="username"
-              type="text"
-              onChange={(e) =>
-                setDetails({
-                  ...details,
-                  username: e.target.value,
-                })
-              }
-            />
-            <TextField
-              label="Password"
-              name="password"
-              type="password"
-              onChange={(e) =>
-                setDetails({
-                  ...details,
-                  password: e.target.value,
-                })
-              }
-            />
-            <button className="btn" type="submit">
-              Login
-            </button>
-          </Form>
+          <CardWrapper>
+            <CardHeading>Login</CardHeading>
+            {error !== "" ? <div className="error">{error}</div> : ""}
+            <Form onSubmit={submitHandler}>
+              <TextField
+                className="input"
+                label="Username"
+                name="username"
+                type="text"
+                onChange={(e) =>
+                  setDetails({
+                    ...details,
+                    username: e.target.value,
+                  })
+                }
+              />
+              <TextField
+                className="input"
+                label="Password"
+                name="password"
+                type="password"
+                onChange={(e) =>
+                  setDetails({
+                    ...details,
+                    password: e.target.value,
+                  })
+                }
+              />
+              <CardButton type="submit">Login</CardButton>
+            </Form>
+          </CardWrapper>
         </div>
       )}
     </Formik>

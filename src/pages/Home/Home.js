@@ -1,19 +1,32 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchPopular } from "../../api/queries";
+import { fetchDocumentaries, fetchPopular } from "../../api/queries";
+import MovieCard from "../../components/MovieCard";
 
 function Home() {
-  const { isLoading, isError, error, data, isFetched, isFetching, ...query } =
-    useQuery("popular", fetchPopular);
+  const { isLoading, isError, error, data } = useQuery("popular", fetchPopular);
+
   console.log(data, isLoading, isError, error);
+
+  function handleBookmark() {
+    console.log("hello");
+  }
+  function handleFavorites() {
+    console.log("hello");
+  }
+
   return (
     <>
-      <h1>Query Products</h1>
-      <ul>
-        {data?.data?.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      <h2>dırırırırı</h2>
+
+      {data?.results.map((item) => (
+        <MovieCard
+          key={item.id}
+          item={item}
+          handleBookmarks={handleBookmark}
+          handleFavorites={handleFavorites}
+        />
+      ))}
     </>
   );
 }

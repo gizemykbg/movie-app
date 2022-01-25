@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-/* :root{
+ :root{
     --primary-color: #007bff;
     --primary-color-light: #057FFF;
     --secondary-color: #6c757d;
@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     --scrollbar-thump-color: #6b6b6b;
     --scrollbar-track-color: #383838;
 
-} */
+} 
 
 .light-theme{
     --primary-color: #007bff;
@@ -118,34 +118,61 @@ h6{
     font-size: 1.2rem;
     padding-bottom: .6rem;
 }
+button:hover {
+    color: var(--primary-color);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px;
+}
+button {
+    background-color: var(--border-color);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px;
+}
+form {
+    margin: 5px;
+    padding: 2px;
+    justify-constent: center;
+    border-radius: 5px;
+    border-width: 1px;
+    label {
+        color: var(--font-light-color)
+    }
+}
 
-//Utilities
+
+.input{
+    margin: 5px;
+    padding: 2px;
+    justify-constent: center;
+    border-radius: 5px;
+    background-color: var(--border-color)
+}
+
+
 .u-margin-bottom{
     margin-bottom: 4rem;
 }
 
 
-//Floting Toggler
 .light-dark-mode{
-    position: fixed;
-    right: 0;
-    top: 50%;
     background-color: var(--background-light-color-2);
-    width: 6.5rem;
+    width: 6rem;
+    right: 5px;
     height: 2.5rem;
-    z-index: 15;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     svg{
       display: flex;
       align-items: center;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       color: var(--white-color);
     }
   }
 
-  //Nav Toggler
   .ham-burger-menu{
       position: absolute;
       right: 5%;
@@ -167,8 +194,6 @@ h6{
     }
   }
 
-
-//Global Media Queries
 
 
 
