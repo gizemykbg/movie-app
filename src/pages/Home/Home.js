@@ -9,12 +9,9 @@ function Home() {
   return (
     <>
       <h1>Query Products</h1>
-
       <ul>
         {data?.data?.map((item) => (
-          <li key={item.id}>
-            {item.title} - {item.price}
-          </li>
+          <li key={item.id}>{item.name}</li>
         ))}
       </ul>
     </>

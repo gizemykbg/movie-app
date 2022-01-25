@@ -1,12 +1,23 @@
 import React from "react";
-import Home from "./pages/Home/Home";
+import Routes from "./routes";
+import { Route, Routes as Routing } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1>dırırırırırır</h1>
-      <Home />
-    </div>
+    <>
+      <Routing>
+        {Routes
+          //.filter((route) => route.isLogin === isLogin)
+          .map((route) => (
+            <Route
+              key={route.id}
+              path={route.path}
+              element={<route.element />}
+            />
+          ))}
+        <Route path="*" />
+      </Routing>
+    </>
   );
 }
 

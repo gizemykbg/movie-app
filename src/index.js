@@ -1,28 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import store, { persistor } from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 import { PersistGate } from "redux-persist/integration/react";
+import GlobalStyle from "./components/styles/GlobalStyle";
+
+import App from "./App";
 
 const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
       <Provider store={store}>
-        <PersistGate loading={<h3>Loading...</h3>} persistor={persistor}>
-          <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
+          <PersistGate loading={<h3>Loading...</h3>} persistor={persistor}>
+            <GlobalStyle />
             <App />
             <ReactQueryDevtools />
-          </QueryClientProvider>
-        </PersistGate>
+          </PersistGate>
+        </QueryClientProvider>
       </Provider>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
