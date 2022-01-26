@@ -1,36 +1,52 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import routes from "../../routes";
 import ThemeToggler from "../ThemeToggler/ThemeToggler";
-import { NavigationStyled } from "./NavbarSc";
+import {
+  Nav,
+  NavbarContainer,
+  NavIcon,
+  NavLogo,
+  SideBarIcon,
+  NavMenu,
+  NavItem,
+  NavLinks,
+} from "./NavbarSc";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
-    <NavigationStyled>
-      {/* <NavLogo to="/" onClick={closeMobileMenu}>
-        <NavIcon />
-        mmFlix
-      </NavLogo> */}
-      <ul className="nav-items">
-        {routes
-          .filter((item) => item.isNav)
-          .map((item, index) => (
-            <li key={index} className="nav-item">
-              <NavLink
-                activeClassName="active-class"
-                aria-current="page"
-                to={item.path}
-              >
-                {item.name}
-              </NavLink>
-            </li>
-          ))}
-      </ul>
-      <div className="avatar">
-        <img src={""} alt="" />
-      </div>
-      <ThemeToggler />
-    </NavigationStyled>
+    <Nav>
+      <NavbarContainer>
+        <NavLogo to="/">
+          <NavIcon />
+          mmFlix
+        </NavLogo>
+
+        <NavMenu>
+          {routes
+            .filter((item) => item.isNav)
+            .map((item, index) => (
+              <NavItem key={index} className="nav-item">
+                <NavLinks
+                  activeClassName="active-class"
+                  aria-current="page"
+                  to={item.path}
+                >
+                  {item.name}
+                </NavLinks>
+              </NavItem>
+            ))}
+          <SideBarIcon onClick={handleClick}>
+            {click ? <FaTimes /> : <FaBars />}
+          </SideBarIcon>
+          <ThemeToggler />
+        </NavMenu>
+      </NavbarContainer>
+    </Nav>
   );
 }
 

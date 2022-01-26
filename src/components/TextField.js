@@ -1,6 +1,6 @@
 import React from "react";
 import { ErrorMessage, useField } from "formik";
-import { CardBody, CardFieldset, CardInput } from "./styles/CardStyles";
+import { CardBody, CardFieldset, CardInput } from "./styles/FormStyles";
 
 export const TextField = ({ label, ...props }) => {
   const [field] = useField(props);

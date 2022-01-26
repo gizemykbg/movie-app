@@ -147,7 +147,8 @@ form {
     padding: 2px;
     justify-constent: center;
     border-radius: 5px;
-    background-color: var(--border-color)
+    background-color: var(--border-color);
+    color: var(--font-light-color)
 }
 
 

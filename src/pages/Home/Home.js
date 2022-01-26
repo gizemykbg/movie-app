@@ -18,7 +18,6 @@ function Home() {
   return (
     <>
       <h2>dırırırırı</h2>
-
       {data?.results.map((item) => (
         <MovieCard
           key={item.id}
