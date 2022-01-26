@@ -7,28 +7,23 @@ const CardStyle = styled.div`
   align-items: center;
   color: var(--font-light-color);
   margin: 3px;
-  box-shadow: 1px 1px 10px var(--border-color);
+  box-shadow: 1px 1px 10px var(--scrollbar-thump-color);
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-out;
   padding: 3px;
   &:hover {
-    box-shadow: 1px 1px 10px 6px var(--border-color);
+    box-shadow: 1px 1px 10px 6px var(--font-light-color);
     transform: translateY(-10px) scale(1);
     transition: all 0.3s ease-out;
   }
-  @media only screen and (max-width: 960px) {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
 
   .card-image {
-    width: 250px;
     img {
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       width: 100%;
-      height: 90%;
+      height: 100%;
     }
   }
   .card-info {

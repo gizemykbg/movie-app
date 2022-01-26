@@ -1,31 +1,20 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchDocumentaries, fetchPopular } from "../../api/queries";
-import MovieCard from "../../components/MovieCard";
+import { fetchDiscover, fetchPopular } from "../../api/queries";
+
+import Slider from "../../components/Slider/Slider";
 
 function Home() {
-  const { isLoading, isError, error, data } = useQuery("popular", fetchPopular);
-
-  console.log(data, isLoading, isError, error);
-
-  function handleBookmark() {
-    console.log("hello");
-  }
-  function handleFavorites() {
-    console.log("hello");
-  }
+  const popularData = useQuery("popular", fetchPopular);
+  // const discoverData = useQuery("discover", fetchDiscover);
+  console.log(popularData);
 
   return (
     <>
-      <h2>dırırırırı</h2>
-      {data?.results.map((item) => (
-        <MovieCard
-          key={item.id}
-          item={item}
-          handleBookmarks={handleBookmark}
-          handleFavorites={handleFavorites}
-        />
-      ))}
+      <Slider item={popularData?.data?.results} title="Popular" />
+      {/* <div>
+        <Slider item={discoverData?.data?.results} title="Discover" />
+      </div> */}
     </>
   );
 }

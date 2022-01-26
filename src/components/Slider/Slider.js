@@ -1,52 +1,29 @@
-import React, { useRef } from "react";
+import React from "react";
 import MovieCard from "../MovieCard";
-import {
-  Button,
-  ButtonWrapper,
-  Container,
-  Content,
-  ContentWrapper,
-  Title,
-} from "./SliderSc";
+import { Scrollable, Box, ScrollTitle } from "./SliderSc";
 
-function Slider({ item }) {
-  const contentWrapper = useRef(null);
-  const sideScroll = (element, speed, distance, step) => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(() => {
-      element.scrollLeft += step;
-      scrollAmount += Math.abs(step);
-      if (scrollAmount >= distance) {
-        clearInterval(slideTimer);
-      }
-    }, speed);
-  };
+function Slider({ item, title }) {
+  function handleBookmark() {
+    console.log("hello");
+  }
+  function handleFavorites() {
+    console.log("hello");
+  }
   return (
-    <Container>
-      <Title>Popular Movie</Title>
-      <ContentWrapper ref={contentWrapper}>
+    <div>
+      <ScrollTitle>{title}</ScrollTitle>
+      <Scrollable dir="ltr">
         {item.map((item) => (
-          <MovieCard item={item} key={item.id} />
+          <Box key={item.id}>
+            <MovieCard
+              item={item}
+              handleBookmarks={handleBookmark}
+              handleFavorites={handleFavorites}
+            />
+          </Box>
         ))}
-      </ContentWrapper>
-
-      <ButtonWrapper>
-        <Button
-          onClick={() => {
-            sideScroll(contentWrapper.current, 20, 100, -20);
-          }}
-        >
-          Left
-        </Button>
-        <Button
-          onClick={() => {
-            sideScroll(contentWrapper.current, 20, 100, 20);
-          }}
-        >
-          Right
-        </Button>
-      </ButtonWrapper>
-    </Container>
+      </Scrollable>
+    </div>
   );
 }
 

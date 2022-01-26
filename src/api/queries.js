@@ -1,5 +1,3 @@
-import React from "react";
-
 import requests from "../services/request";
 import instance from "../services/instance";
 
@@ -11,9 +9,9 @@ const fetchPopular = async () => {
     console.log(error);
   }
 };
-const fetchDocumentaries = async () => {
+const fetchDiscover = async () => {
   try {
-    const { data } = await instance.get(requests.fetchDocumentaries);
+    const { data } = await instance.get(requests.fetchDiscover);
     return data;
   } catch (error) {
     console.log(error);
@@ -36,4 +34,4 @@ const findGenre = async ({ genre }) => {
   }
 };
 
-export { fetchPopular, fetchDocumentaries, fetchSearch, findGenre };
+export { fetchPopular, fetchDiscover, fetchSearch, findGenre };

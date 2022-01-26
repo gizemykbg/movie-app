@@ -1,52 +1,51 @@
 import styled from "styled-components";
-import MovieCard from "../MovieCard";
 
-const Container = styled.div`
-  min-height: calc(100vh - 20px);
-  width: calc(100% - 64px);
-  margin: -8px;
-  padding: 10px 40px;
-  overflow: hidden;
-  background-color: #1c2022;
-`;
-
-const Title = styled.h1`
-  font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
-  width: max-content;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  border: 5px solid #ffffff;
-  border-radius: 10px;
-
-  & > ${MovieCard} {
-    margin: 10px 10px;
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  margin-top: 20px;
-  justify-content: space-between;
-`;
-
-const Button = styled.button`
-  background: #ffffff;
-  border: 0;
-  color: #000000;
-  padding: 10px 20px;
+const Box = styled.div`
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 100%;
   border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
+  scroll-snap-align: align;
+  @media only screen and (max-width: 960px) {
+    padding-right: 8px;
+    padding-left: 8px;
+    display: block;
   }
 `;
 
-export { Container, Title, ContentWrapper, MovieCard, ButtonWrapper, Button };
+const Scrollable = styled.div`
+  padding: 20px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--border-color);
+  margin: 5px;
+  scroll-padding: 18px;
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  width: 99%;
+  height: 100%;
+  ${"" /* grid-template-columns: repeat(5, 400px); */}
+  overflow: auto;
+  outline: 1px dashed var(--font-light-color);
+  scroll-snap-type: x;
+  @media only screen and (max-width: 960px) {
+    padding-right: 3px;
+    padding-left: 3px;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-padding: 18px;
+  }
+`;
+
+const ScrollTitle = styled.h3`
+  color: var(--text-light-color);
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+`;
+
+export { Scrollable, Box, ScrollTitle };

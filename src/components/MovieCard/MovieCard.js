@@ -8,8 +8,6 @@ const MovieCard = ({ item, handleBookmarks, handleFavorites }) => {
     <CardStyle className="card">
       <div className="card-image">
         <img
-          height="100"
-          width="100"
           src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
           alt="movie-img"
         />
