@@ -1,5 +1,6 @@
 import requests from "../services/request";
 import instance from "../services/instance";
+import { API_KEY } from "../services/request";
 
 const fetchPopular = async () => {
   try {
@@ -17,9 +18,11 @@ const fetchDiscover = async () => {
     console.log(error);
   }
 };
-const fetchSearch = async ({ query }) => {
+const fetchSearch = async (value) => {
   try {
-    const { data } = await instance.get(requests.searchUrl, query);
+    const { data } = await instance.get(
+      `/search/movie?api_key=${API_KEY}&query=${value}&page=1`
+    );
     return data;
   } catch (error) {
     console.log(error);

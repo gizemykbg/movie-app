@@ -15,19 +15,17 @@ import App from "./App";
 
 const queryClient = new QueryClient();
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Provider store={store}>
-        <QueryClientProvider client={queryClient}>
-          <PersistGate loading={<h3>Loading...</h3>} persistor={persistor}>
-            <GlobalStyle />
-            <App />
-            <ReactQueryDevtools />
-          </PersistGate>
-        </QueryClientProvider>
-      </Provider>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <PersistGate loading={<h3>Loading...</h3>} persistor={persistor}>
+          <GlobalStyle />
+          <App />
+          <ReactQueryDevtools />
+        </PersistGate>
+      </QueryClientProvider>
+    </Provider>
+  </Router>,
   document.getElementById("root")
 );
 

@@ -1,20 +1,15 @@
-import React from "react";
-import { useQuery } from "react-query";
-import { fetchDiscover, fetchPopular } from "../../api/queries";
-
-import Slider from "../../components/Slider/Slider";
+import React, { useEffect, useState } from "react";
+import Discover from "../Discover";
+import Popular from "../Popular";
+import Search from "../Search";
 
 function Home() {
-  const popularData = useQuery("popular", fetchPopular);
-  // const discoverData = useQuery("discover", fetchDiscover);
-  console.log(popularData);
-
   return (
     <>
-      <Slider item={popularData?.data?.results} title="Popular" />
-      {/* <div>
-        <Slider item={discoverData?.data?.results} title="Discover" />
-      </div> */}
+      <div>nanannananan</div>
+      <Search />
+      <Popular />
+      <Discover />
     </>
   );
 }

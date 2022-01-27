@@ -27,19 +27,15 @@ function ThemeToggler({ value }) {
     // <Sidebar navToggle={navToggle} />
     <div className="theme">
       <div className="light-dark-mode">
-        <div className="left-content">
-          <Brightness3Icon />
-        </div>
-        <div className="right-content">
-          <Switch
-            value={value}
-            checked={checked}
-            inputProps={{ "aria-label": "" }}
-            size="medium"
-            onClick={themeToggler}
-          />
-          <Brightness5Icon />
-        </div>
+        <Brightness3Icon />
+        <Switch
+          value={value}
+          checked={checked}
+          inputProps={{ "aria-label": "" }}
+          size="medium"
+          onClick={themeToggler}
+        />
+        <Brightness5Icon />
       </div>
     </div>
   );

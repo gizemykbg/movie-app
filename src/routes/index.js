@@ -1,6 +1,6 @@
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
-
+import Search from "../pages/Search";
 const routes = [
   {
     id: 1,
@@ -17,6 +17,13 @@ const routes = [
     isLogin: true,
     isNav: true,
     name: "Home",
+  },
+  {
+    id: 3,
+    path: "/search/:",
+    isLogin: true,
+    isNav: false,
+    name: "Search",
   },
 ];
 

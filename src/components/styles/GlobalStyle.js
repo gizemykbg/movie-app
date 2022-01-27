@@ -158,22 +158,21 @@ form {
 
 
 .light-dark-mode{
-    background-color: var(--background-light-color-2);
+    background-color: var(--border-color);
     width: 6rem;
-    right: 5px;
+    right: 2px;
     height: 2.5rem;
     z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: center;
+     justify-content: center;
     svg{
       display: flex;
       align-items: center;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: var(--white-color);
     }
   }
-
   .ham-burger-menu{
       position: absolute;
       right: 5%;

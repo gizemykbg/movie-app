@@ -3,6 +3,9 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "../TextField";
 import { CardHeading, CardWrapper, CardButton } from "../styles/FormStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { success_login } from "../../redux/login";
 
 const validate = Yup.object({
   username: Yup.string()
@@ -16,11 +19,28 @@ const validate = Yup.object({
 });
 
 function LoginForm() {
-  const [details, setDetails] = useState();
-  console.log(details);
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  console.log(user);
+  const login = useSelector((state) => state.login);
+  const navigation = useNavigate();
+  console.log(login);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (user.username === username && user.password === password) {
+      dispatch(success_login());
+      navigation("/home");
+    } else {
+      alert("Username or password not correct.");
+    }
+  }
+
   //  navigation.navigate("/Home");
   // const navigation = useNavigation();
-
+  console.log(username, password);
   return (
     <div>
       <CardWrapper>
@@ -29,7 +49,15 @@ function LoginForm() {
           initialValues={{ username: "", email: "", password: "" }}
           validationSchema={validate}
           onSubmit={(values) => {
-            setDetails(values);
+            setUsername(values.username);
+            setPassword(values.password);
+
+            if (user.username === username && user.password === password) {
+              dispatch(success_login());
+              navigation("/home");
+            } else {
+              alert("Username or password not correct.");
+            }
           }}
         >
           {({ handleSubmit, handleChange, values, errors }) => (

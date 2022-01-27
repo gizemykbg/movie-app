@@ -17,7 +17,7 @@ const Box = styled.div`
 `;
 
 const Scrollable = styled.div`
-  padding: 20px;
+  padding: 30px;
   align-items: center;
   border-radius: 10px;
   background-color: var(--border-color);
