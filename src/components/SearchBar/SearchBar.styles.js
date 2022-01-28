@@ -30,7 +30,7 @@ const RightSide = styled.div`
 `;
 const Spinner = styled.div`
   border: 2px solid red;
-  border-top: 2px solid var(--border-color);
+  border-top: 2px solid var(--font-ligt-color);
   border-radius: 50%;
   width: 20px;
   height: 20px;

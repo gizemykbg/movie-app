@@ -1,6 +1,7 @@
-import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
-import Search from "../pages/Search";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Search from "../pages/content/Search";
+
 const routes = [
   {
     id: 1,
@@ -20,9 +21,10 @@ const routes = [
   },
   {
     id: 3,
-    path: "/search/:",
+    element: Search,
+    path: "/search",
     isLogin: true,
-    isNav: false,
+    isNav: true,
     name: "Search",
   },
 ];

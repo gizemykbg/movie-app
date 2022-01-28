@@ -1,12 +1,12 @@
 const ADD_WATCHLIST = "ADD_WATCHLIST";
 const DELETE_WATCHLIST = "DELETE_WATCHLIST";
 
-const add_watchlist = (id = 1, title = 111, genre = 222) => ({
+const add_watchlist = (id, title, genre) => ({
   type: ADD_WATCHLIST,
   payload: { id, title, genre },
 });
 
-const delete_watchlist = (id = 1) => ({
+const delete_watchlist = (id) => ({
   type: DELETE_WATCHLIST,
   payload: id,
 });

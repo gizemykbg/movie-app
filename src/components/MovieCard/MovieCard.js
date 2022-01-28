@@ -2,8 +2,15 @@ import * as React from "react";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CardStyle from "./MovieCardSc";
+import { useDispatch, useSelector } from "react-redux";
+import { add_favorites, delete_favorites } from "../../redux/favorite";
+import { add_watchlist, delete_watchlist } from "../../redux/watchlist";
 
-const MovieCard = ({ item, handleBookmarks, handleFavorites }) => {
+const MovieCard = ({ item }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
+  const watchlist = useSelector((state) => state.watchlist);
+
   return (
     <CardStyle className="card">
       <div className="card-image">
@@ -15,12 +22,44 @@ const MovieCard = ({ item, handleBookmarks, handleFavorites }) => {
       <div className="card-info">
         <div className="card-title">{item.original_title}</div>
         <div className="btn-container">
-          <button className="card-button" onClick={handleBookmarks}>
-            <BookmarkIcon />
-          </button>
-          <button className="card-button" onClick={handleFavorites}>
-            <FavoriteIcon />
-          </button>
+          {watchlist.watchMovies.find((movie) => movie.id === item.id) ? (
+            <button
+              className="card-button"
+              onClick={() => dispatch(delete_watchlist(item.id))}
+            >
+              <BookmarkIcon color="black" />
+            </button>
+          ) : (
+            <button
+              className="card-button"
+              onClick={() =>
+                dispatch(
+                  add_watchlist(item.id, item.genre, item.original_title)
+                )
+              }
+            >
+              <BookmarkIcon />
+            </button>
+          )}
+          {favorites.favoriteMovies.find((movie) => movie.id === item.id) ? (
+            <button
+              className="card-button"
+              onClick={() => dispatch(delete_favorites(item.id))}
+            >
+              <FavoriteIcon color="red" />
+            </button>
+          ) : (
+            <button
+              className="card-button"
+              onClick={() =>
+                dispatch(
+                  add_favorites(item.id, item.genre, item.original_title)
+                )
+              }
+            >
+              <FavoriteIcon />
+            </button>
+          )}
         </div>
       </div>
     </CardStyle>

@@ -18,6 +18,16 @@ const fetchDiscover = async () => {
     console.log(error);
   }
 };
+const fetchSelected = async (selectedItem) => {
+  try {
+    const { data } = await instance.get(
+      `/movie/${selectedItem}?api_key=${API_KEY}&page=1`
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 const fetchSearch = async (value) => {
   try {
     const { data } = await instance.get(
@@ -37,4 +47,4 @@ const findGenre = async ({ genre }) => {
   }
 };
 
-export { fetchPopular, fetchDiscover, fetchSearch, findGenre };
+export { fetchPopular, fetchDiscover, fetchSearch, findGenre, fetchSelected };

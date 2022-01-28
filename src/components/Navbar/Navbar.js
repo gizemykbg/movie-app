@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import routes from "../../routes";
-import ThemeToggler from "../ThemeToggler/ThemeToggler";
+import ThemeToggler from "../ThemeToggler";
 import {
   Nav,
   NavbarContainer,

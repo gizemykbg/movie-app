@@ -1,8 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchDiscover } from "../api/queries";
-import Skeleton from "../components/Skeleton";
-import Slider from "../components/Slider";
+import { fetchDiscover } from "../../api/queries";
+
+import Slider from "../../components/Slider";
+import Spinners from "../../components/Spinners";
 
 function Discover() {
   const { isLoading, data } = useQuery("discover", fetchDiscover);
@@ -11,7 +12,7 @@ function Discover() {
     <>
       <div>nanannananan</div>
       {isLoading ? (
-        <Skeleton />
+        <Spinners />
       ) : (
         <Slider item={data?.results} title="Discover" />
       )}

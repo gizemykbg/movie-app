@@ -1,12 +1,12 @@
 const ADD_FAVORITES = "ADD_FAVORITES";
 const DELETE_FAVORITES = "DELETE_FAVORITES";
 
-const add_Favorites = (id = 1, title = 111, genre = 222) => ({
+const add_favorites = (id, title, genre) => ({
   type: ADD_FAVORITES,
   payload: { id, title, genre },
 });
 
-const delete_Favorites = (id = 1) => ({
+const delete_favorites = (id) => ({
   type: DELETE_FAVORITES,
   payload: id,
 });
@@ -42,4 +42,4 @@ const favReducer = (
 };
 
 export default favReducer;
-export { add_Favorites, delete_Favorites };
+export { add_favorites, delete_favorites };

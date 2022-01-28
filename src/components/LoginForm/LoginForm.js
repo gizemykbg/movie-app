@@ -28,15 +28,15 @@ function LoginForm() {
   const navigation = useNavigate();
   console.log(login);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (user.username === username && user.password === password) {
-      dispatch(success_login());
-      navigation("/home");
-    } else {
-      alert("Username or password not correct.");
-    }
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   if (user.username === username && user.password === password) {
+  //     dispatch(success_login());
+  //     navigation("/home");
+  //   } else {
+  //     alert("Username or password not correct.");
+  //   }
+  // }
 
   //  navigation.navigate("/Home");
   // const navigation = useNavigation();
@@ -51,7 +51,6 @@ function LoginForm() {
           onSubmit={(values) => {
             setUsername(values.username);
             setPassword(values.password);
-
             if (user.username === username && user.password === password) {
               dispatch(success_login());
               navigation("/home");
