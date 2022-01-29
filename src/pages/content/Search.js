@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import SearchBar from "../../components/SearchBar";
-import useDebounce from "../../hooks/useDebounce";
-import { fetchSearch } from "../../api/queries";
-import MovieCard from "../../components/MovieCard";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Spinners from "../../components/Spinners";
+import { fetchSearch } from "../../api/queries";
+import useDebounce from "../../hooks/useDebounce";
+import SearchBar from "../../components/Globals/SearchBar";
+import Spinners from "../../components/Globals/Spinners";
+import MovieCard from "../../components/Cards/MovieCard";
 
 function Search() {
   const [searchParams, setSearchParams] = useSearchParams();

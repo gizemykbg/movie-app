@@ -38,6 +38,16 @@ const fetchSearch = async (value) => {
     console.log(error);
   }
 };
+const fetchDetails = async (movieID) => {
+  try {
+    const { data } = await instance.get(
+      `/movie/${movieID}?api_key=${API_KEY}&append_to_response=credits,external_ids,images,videos,reviews,recommendations&`
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 const findGenre = async ({ genre }) => {
   try {
     const { data } = await instance.get(requests.searchUrl, genre);
@@ -47,4 +57,11 @@ const findGenre = async ({ genre }) => {
   }
 };
 
-export { fetchPopular, fetchDiscover, fetchSearch, findGenre, fetchSelected };
+export {
+  fetchPopular,
+  fetchDiscover,
+  fetchSearch,
+  findGenre,
+  fetchSelected,
+  fetchDetails,
+};

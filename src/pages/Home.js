@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Dropdown from "../components/Dropdown";
-
-import Discover from "./content/Discover";
-import Popular from "./content/Popular";
-import Search from "./content/Search";
-import { options, label } from "../components/Dropdown/dropdata";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchSelected } from "../api/queries";
+import Dropdown from "../components/Globals/Dropdown";
+import { options, label } from "../components/Globals/Dropdown/dropdata";
+import Discover from "./content/Discover";
+import Popular from "./content/Popular";
+import Search from "./content/Search";
 
 function Home() {
   const navigation = useNavigate();

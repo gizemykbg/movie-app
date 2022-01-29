@@ -1,6 +1,7 @@
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Search from "../pages/content/Search";
+import DetailPage from "../pages/DetailPage";
 
 const routes = [
   {
@@ -13,11 +14,11 @@ const routes = [
   },
   {
     id: 2,
-    path: "/home",
+    path: "/movies",
     element: Home,
     isLogin: true,
     isNav: true,
-    name: "Home",
+    name: "Movies",
   },
   {
     id: 3,
@@ -26,6 +27,14 @@ const routes = [
     isLogin: true,
     isNav: true,
     name: "Search",
+  },
+  {
+    id: 4,
+    path: "/movies/:id",
+    element: DetailPage,
+    isLogin: true,
+    isNav: false,
+    name: "MovieDetail",
   },
 ];
 

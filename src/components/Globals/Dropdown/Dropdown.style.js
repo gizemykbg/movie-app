@@ -38,14 +38,14 @@ export const DropdownItem = styled.li`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  color: white;
+  color: var(--font-light-color);
   box-sizing: border-box;
   padding-left: 15px;
   cursor: pointer;
   border-bottom: 1px solid
     ${(props) => (props.last ? "transparent" : "rgba(255, 255, 255, 0.1)")};
   &:hover {
-    color: var(--font-dark-color);
+    color: var(--white);
     background-color: var(--font-light-color);
   }
 `;

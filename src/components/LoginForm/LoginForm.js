@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import TextField from "../TextField";
 import { CardHeading, CardWrapper, CardButton } from "../styles/FormStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { success_login } from "../../redux/login";
+import TextField from "../Globals/TextField";
 
 const validate = Yup.object({
   username: Yup.string()
@@ -38,8 +38,6 @@ function LoginForm() {
   //   }
   // }
 
-  //  navigation.navigate("/Home");
-  // const navigation = useNavigation();
   console.log(username, password);
   return (
     <div>

@@ -9,7 +9,7 @@ import {
   ListWrapper,
   List,
 } from "./Dropdown.style";
-import icon from "../../assets/icon.png";
+import icon from "../../../assets/icon.png";
 
 const Item = ({ item, onClickItem }) => {
   const handleClick = () => onClickItem(item);
