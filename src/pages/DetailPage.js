@@ -2,8 +2,8 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 import { fetchDetails } from "../api/queries";
-import DetailCard from "../components/Cards/DetailCard";
-import Spinners from "../components/Globals/Spinners";
+import DetailCard from "../components/Globals/Cards/DetailCard";
+import Spinners from "../components/Base/Spinners";
 
 function DetailPage() {
   const { pathname } = useLocation();

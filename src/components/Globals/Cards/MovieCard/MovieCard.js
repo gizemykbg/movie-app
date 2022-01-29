@@ -3,9 +3,9 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CardStyle from "./MovieCardSc";
 import { useDispatch, useSelector } from "react-redux";
-import { add_favorites, delete_favorites } from "../../../redux/favorite";
-import { add_watchlist, delete_watchlist } from "../../../redux/watchlist";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { add_favorites, delete_favorites } from "../../../../redux/favorite";
+import { add_watchlist, delete_watchlist } from "../../../../redux/watchlist";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
   const navigation = useNavigate();

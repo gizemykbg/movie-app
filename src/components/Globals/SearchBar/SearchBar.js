@@ -9,7 +9,7 @@ import {
 import ZoomOutOutlinedIcon from "@mui/icons-material/ZoomOutOutlined";
 
 function SearchBar({ isLoading, value, handleChange, setValue, onSubmit }) {
-  const handleClear = (e) => {
+  const handleClear = () => {
     setValue("");
   };
 
@@ -21,7 +21,7 @@ function SearchBar({ isLoading, value, handleChange, setValue, onSubmit }) {
         </IconImage>
         <Input value={value} onChange={handleChange} />
         <RightSide>
-          {value && <div onClick={handleClear}>X</div>}
+          {value && <div onClick={handleClear}> X </div>}
           {isLoading && <Spinner />}
         </RightSide>
       </SearchBarWrapper>

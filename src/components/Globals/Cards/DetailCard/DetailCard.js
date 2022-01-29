@@ -10,7 +10,8 @@ import {
 } from "./DetailCard.styles";
 
 import { FiPercent } from "react-icons/fi";
-import { formatRuntime, colorPercentage } from "../../../helpers/helpers";
+import { formatRuntime, colorPercentage } from "../../../../helpers/helpers";
+import { Casts, Recommendations } from "../Casts";
 
 function DetailCard({ item }) {
   return (
@@ -89,6 +90,8 @@ function DetailCard({ item }) {
           </div>
         </Content>
       </Showcase>
+      <Casts item={item} />
+      <Recommendations item={item} />
       {/* {showTrailer && (
         <Trailer trailer={trailer} setShowTrailer={setShowTrailer} />
       )} */}

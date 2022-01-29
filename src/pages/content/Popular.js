@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { fetchPopular } from "../../api/queries";
 import Slider from "../../components/Globals/Slider";
-import Spinners from "../../components/Globals/Spinners";
+import Spinners from "../../components/Base/Spinners";
 
 function Popular() {
   const { isLoading, data } = useQuery("popular", fetchPopular);

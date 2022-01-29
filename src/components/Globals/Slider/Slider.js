@@ -1,6 +1,6 @@
 import React from "react";
 
-import MovieCard from "../../Cards/MovieCard";
+import MovieCard from "../Cards/MovieCard";
 import { Scrollable, Box, ScrollTitle } from "./SliderSc";
 
 function Slider({ item, title, onClick }) {

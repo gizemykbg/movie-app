@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { fetchDiscover } from "../../api/queries";
 
 import Slider from "../../components/Globals/Slider";
-import Spinners from "../../components/Globals/Spinners";
+import Spinners from "../../components/Base/Spinners";
 
 function Discover() {
   const { isLoading, data } = useQuery("discover", fetchDiscover);

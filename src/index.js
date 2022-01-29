@@ -8,15 +8,15 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import store, { persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import GlobalStyle from "./components/styles/GlobalStyle";
-
 import App from "./App";
+import Spinners from "./components/Base/Spinners";
 
 const queryClient = new QueryClient();
 ReactDOM.render(
   <Router>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <PersistGate loading={<h3>Loading...</h3>} persistor={persistor}>
+        <PersistGate loading={<Spinners />} persistor={persistor}>
           <GlobalStyle />
           <App />
           <ReactQueryDevtools />

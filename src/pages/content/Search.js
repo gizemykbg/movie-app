@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import { fetchSearch } from "../../api/queries";
 import useDebounce from "../../hooks/useDebounce";
 import SearchBar from "../../components/Globals/SearchBar";
-import Spinners from "../../components/Globals/Spinners";
-import MovieCard from "../../components/Cards/MovieCard";
+import Spinners from "../../components/Base/Spinners";
+import List from "../../components/Globals/List";
 
 function Search() {
+  // const { pathname } = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("query") || "";
-
   const handleChange = (e) => {
     setSearchParams({ query: e.target.value });
   };
@@ -37,9 +37,7 @@ function Search() {
         <Spinners />
       ) : (
         <div>
-          {data?.results?.map((item) => (
-            <MovieCard item={item} key={item.id} />
-          ))}
+          <List item={data?.results} />
         </div>
       )}
     </>
