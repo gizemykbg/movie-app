@@ -51,7 +51,7 @@ function LoginForm() {
             setPassword(values.password);
             if (user.username === username && user.password === password) {
               dispatch(success_login());
-              navigation("/home");
+              navigation("/");
             } else {
               alert("Username or password not correct.");
             }

@@ -13,12 +13,7 @@ function DetailPage() {
     fetchDetails(movieID)
   );
   console.log(data);
-  return (
-    <>
-      Hoppaa
-      {isLoading ? <Spinners /> : <DetailCard item={data} />}
-    </>
-  );
+  return <>{isLoading ? <Spinners /> : <DetailCard item={data} />}</>;
 }
 
 export default DetailPage;

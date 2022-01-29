@@ -89,7 +89,7 @@ export const NavItem = styled.li`
   border-bottom: 2px solid transparent;
   color: var(--font-light-color);
   &:hover {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--secondary-color);
   }
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -105,14 +105,45 @@ export const NavLinks = styled(Link)`
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  &:hover {
+    color: #4b59f7;
+    transition: all 0.3s ease;
+  }
   @media screen and (max-width: 500px) {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
-    &:hover {
-      color: #4b59f7;
-      transition: all 0.3s ease;
-    }
   }
+`;
+export const Button = styled.button`
+  height: 40px;
+  border-bottom: 2px solid transparent;
+  color: var(--font-light-color);
+  &:hover {
+    border: 2px solid var(--secondary-color);
+  }
+  @media only screen and (max-width: 500px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+`;
+export const ImgWrap = styled.div`
+  color: var(--font-light-color);
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 500px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+`;
+export const Image = styled.img`
+  transition: all 0.3s ease-in-out;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 2px;
 `;

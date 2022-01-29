@@ -1,13 +1,13 @@
 const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-const LOGIN_ERROR = "LOGIN_ERROR";
+const LOGOUT = "LOGOUT";
 
 const success_login = (isLogin = true) => ({
   type: LOGIN_SUCCESS,
   payload: isLogin,
 });
 
-const error_login = (isLogin = false) => ({
-  type: LOGIN_ERROR,
+const logout = (isLogin = false) => ({
+  type: LOGOUT,
   payload: isLogin,
 });
 
@@ -15,7 +15,7 @@ const loginReducer = (isLogin = false, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return action.payload;
-    case LOGIN_ERROR:
+    case LOGOUT:
       return action.payload;
     default:
       return isLogin;
@@ -23,4 +23,4 @@ const loginReducer = (isLogin = false, action) => {
 };
 
 export default loginReducer;
-export { success_login, error_login };
+export { success_login, logout };

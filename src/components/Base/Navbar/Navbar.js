@@ -10,13 +10,27 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
+  Button,
+  ImgWrap,
+  Image,
 } from "./NavbarSc";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../redux/login";
+import avatar from "../../../assets/avatar.png";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
+  const isLogin = useSelector((state) => state.login);
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+  const handleLogin = () => {
+    navigation("/login");
+  };
+  const handleLogout = () => {
+    navigation("/login");
+    dispatch(logout());
+  };
 
   return (
     <Nav>
@@ -40,10 +54,17 @@ function Navbar() {
                 </NavLinks>
               </NavItem>
             ))}
-          <SideBarIcon onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
-          </SideBarIcon>
           <ThemeToggler />
+          {isLogin === true ? (
+            <>
+              <Button onClick={handleLogout}>Logout</Button>
+              <ImgWrap>
+                <Image src={avatar} onClick={() => navigation("/profile")} />
+              </ImgWrap>
+            </>
+          ) : (
+            <Button onClick={handleLogin}>Login</Button>
+          )}
         </NavMenu>
       </NavbarContainer>
     </Nav>
