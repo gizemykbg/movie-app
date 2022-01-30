@@ -2,8 +2,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Search from "../pages/content/Search";
 import DetailPage from "../pages/DetailPage";
-import FilterPage from "../pages/content/FilterContent";
 import Profile from "../pages/Profile";
+import Filter from "../pages/Filter";
 
 const routes = [
   {
@@ -50,6 +50,14 @@ const routes = [
     name: "Profile",
     element: Profile,
     isNav: false,
+  },
+  {
+    id: 7,
+    path: "/filter",
+    isLogin: true,
+    name: "Filter",
+    element: Filter,
+    isNav: true,
   },
 ];
 
