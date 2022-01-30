@@ -10,6 +10,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import GlobalStyle from "./components/styles/GlobalStyle";
 import App from "./App";
 import Spinners from "./components/Base/Spinners";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 
 const queryClient = new QueryClient();
 ReactDOM.render(

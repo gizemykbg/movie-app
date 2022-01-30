@@ -18,10 +18,10 @@ const fetchDiscover = async () => {
     console.log(error);
   }
 };
-const fetchSelected = async (selectedItem) => {
+const fetchSelected = async (selectParams) => {
   try {
     const { data } = await instance.get(
-      `/movie/${selectedItem}?api_key=${API_KEY}&page=1`
+      `/movie/${selectParams}?api_key=${API_KEY}&page=1`
     );
     return data;
   } catch (error) {
@@ -48,9 +48,24 @@ const fetchDetails = async (movieID) => {
     console.log(error);
   }
 };
-const findGenre = async ({ genre }) => {
+const fetchGenre = async () => {
   try {
-    const { data } = await instance.get(requests.searchUrl, genre);
+    const { genres } = await instance.get(requests.findGenre);
+    return genres;
+  } catch (error) {
+    console.log(error);
+  }
+};
+const fetchFilteredData = async (
+  genreChosen,
+  rateChosen,
+  yearChosen,
+  sortChosen
+) => {
+  try {
+    const { data } = await instance.get(
+      `/popular/movie/?api_key=${API_KEY}&with_genres=${genreChosen}&vote_average.gte=${rateChosen}&primary_release_year=${yearChosen}&sort_by=${sortChosen}`
+    );
     return data;
   } catch (error) {
     console.log(error);
@@ -61,7 +76,8 @@ export {
   fetchPopular,
   fetchDiscover,
   fetchSearch,
-  findGenre,
+  fetchGenre,
   fetchSelected,
   fetchDetails,
+  fetchFilteredData,
 };

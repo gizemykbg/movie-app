@@ -87,8 +87,14 @@ body::-webkit-scrollbar-track{
     border-radius: 10px;
     background-color: #383838;
 }
-
-
+img{
+    display: flex;
+max-width: 100%;
+  height: auto;  
+}
+img:hover{
+  transform: scaleX(-1);
+}
 a{
     font-family: inherit;
     color: inherit;
@@ -193,7 +199,12 @@ form {
         display: block;
     }
   }
-
+.filter-sort{
+  float: left;
+  width: 20%;
+  padding-left: 20px;
+  padding-top: 20px;
+}
 
 
 

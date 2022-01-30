@@ -1,29 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
-import { fetchSelected } from "../api/queries";
+import { fetchGenre, fetchSelected } from "../api/queries";
 import Dropdown from "../components/Globals/Dropdown";
 import { options, label } from "../components/Globals/Dropdown/dropdata";
 import Discover from "./content/Discover";
 import Popular from "./content/Popular";
-import Search from "./content/Search";
 import SearchBar from "../components/Globals/SearchBar";
-import useDebounce from "../hooks/useDebounce";
+
+import Spinners from "../components/Base/Spinners";
+import List from "../components/Globals/List";
+import { movieGenres } from "../helpers/helpers";
+import FilterCard from "../components/FilterSection/FilterElements/FilterCard";
 
 function Home() {
   const [selectParams, setSelectParams] = useSearchParams();
   const selectedItem = selectParams.get("selected") || "";
-  const navigate = useNavigate();
+  const navigation = useNavigate();
+
   const handleSelect = (option, e) => {
     setSelectParams({ selected: option.label });
+    e.preventDefault();
+    navigation(`/filter?${selectedItem}`);
   };
-
-  const { isLoading, data } = useQuery(["selectData", selectParams], async () =>
-    fetchSelected(selectParams)
+  const { isLoading, data } = useQuery(["selectData", selectedItem], async () =>
+    fetchSelected(selectedItem)
   );
-
   console.log(selectedItem);
-  console.log(data);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("query") || "";
@@ -33,7 +36,7 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search?query=${searchValue}`);
+    navigation(`/search?query=${searchValue}`);
   };
 
   return (
@@ -51,6 +54,14 @@ function Home() {
         isLoading={isLoading}
         onSubmit={handleSubmit}
       />
+      <FilterCard />
+      {isLoading ? (
+        <Spinners />
+      ) : (
+        <div>
+          <List item={data?.results} />
+        </div>
+      )}
       <Popular />
       <Discover />
     </>

@@ -6,12 +6,14 @@ import userReducer from "./user";
 import loginReducer from "./login";
 import favReducer from "./favorite";
 import watchlistReducer from "./watchlist";
+import filterReducer from "./filter";
 
 const rootReducer = combineReducers({
   user: userReducer,
   login: loginReducer,
   favorites: favReducer,
   watchlist: watchlistReducer,
+  filter: filterReducer,
 });
 
 const persistConfig = {

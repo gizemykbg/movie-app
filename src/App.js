@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Footer from "./components/Base/Footer";
 import Navbar from "./components/Base/Navbar";
 import Login from "./pages/Login";
+import Error from "./components/Base/Error";
 function App() {
   const isLogin = useSelector((state) => state.login);
   console.log(isLogin);
@@ -15,7 +16,7 @@ function App() {
         {Routes.filter((item) => item.isLogin === isLogin).map((route) => (
           <Route key={route.id} path={route.path} element={<route.element />} />
         ))}
-        <Route path="*" element={<h1>Mal </h1>} />
+        <Route path="*" element={<Error />} />
       </Routing>
       <Footer />
     </>

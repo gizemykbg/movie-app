@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Box = styled.div`
+const CBox = styled.div`
   position: relative;
   display: block;
   align-items: center;
@@ -48,4 +48,4 @@ const ScrollTitle = styled.h3`
   margin: 5px;
 `;
 
-export { Scrollable, Box, ScrollTitle };
+export { Scrollable, CBox, ScrollTitle };

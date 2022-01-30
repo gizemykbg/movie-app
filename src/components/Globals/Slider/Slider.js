@@ -1,7 +1,7 @@
 import React from "react";
 
 import MovieCard from "../Cards/MovieCard";
-import { Scrollable, Box, ScrollTitle } from "./SliderSc";
+import { Scrollable, CBox, ScrollTitle } from "./SliderSc";
 
 function Slider({ item, title, onClick }) {
   return (
@@ -9,9 +9,9 @@ function Slider({ item, title, onClick }) {
       <ScrollTitle>{title}</ScrollTitle>
       <Scrollable dir="ltr">
         {item.map((item) => (
-          <Box key={item.id}>
+          <CBox key={item.id}>
             <MovieCard item={item} onClick={onClick} />
-          </Box>
+          </CBox>
         ))}
       </Scrollable>
     </div>

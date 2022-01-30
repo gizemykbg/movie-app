@@ -18,7 +18,7 @@ const MovieCard = ({ item }) => {
   }
 
   return (
-    <CardStyle className="card">
+    <CardStyle>
       <div className="card-image" onClick={handleClick}>
         <img
           src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}

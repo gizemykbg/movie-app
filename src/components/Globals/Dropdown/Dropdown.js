@@ -10,6 +10,7 @@ import {
   List,
 } from "./Dropdown.style";
 import icon from "../../../assets/icon.png";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({ item, onClickItem }) => {
   const handleClick = () => onClickItem(item);
@@ -27,16 +28,16 @@ const ListC = ({ items, onClickItem }) => {
   );
   return result;
 };
-function DropdownBox({ options, selected, label, onChange, ...rest }) {
+function DropdownBox({ options, selected, label, onChange, onClick, ...rest }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenCloseButton = () => {
     setIsOpen(!isOpen);
   };
-
   const handleClickItem = (item) => {
     setIsOpen(false);
     onChange(item);
+    console.log(item.label);
   };
   return (
     <Wrapper {...rest}>
