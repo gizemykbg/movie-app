@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { useQuery } from "react-query";
-import { fetchGenre, fetchSelected } from "../api/queries";
-import Dropdown from "../components/Globals/Dropdown";
-import { options, label } from "../components/Globals/Dropdown/dropdata";
 import Discover from "./content/Discover";
 import Popular from "./content/Popular";
 import SearchBar from "../components/Globals/SearchBar";
-
-import Spinners from "../components/Base/Spinners";
-import List from "../components/Globals/List";
-import { movieGenres } from "../helpers/helpers";
-import FilterCard from "../components/FilterSection/FilterElements/FilterCard";
 
 function Home() {
   // const [selectParams, setSelectParams] = useSearchParams();
