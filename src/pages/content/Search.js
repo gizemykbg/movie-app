@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
-import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { fetchSearch } from "../../api/queries";
 import useDebounce from "../../hooks/useDebounce";
 import SearchBar from "../../components/Globals/SearchBar";
 import Spinners from "../../components/Base/Spinners";
-import Error from "../../components/Base/Error";
 import ListS from "../../components/Globals/List/ListS";
 
 function Search() {
-  // const { pathname } = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("query") || "";
   const handleChange = (e) => {

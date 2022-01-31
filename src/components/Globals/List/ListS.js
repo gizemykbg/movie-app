@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ListCWrapper, PageBox } from "./List.styles";
+import { ListCWrapper } from "./List.styles";
 import MovieCard from "../Cards/MovieCard";
 import Pagination from "@mui/material/Pagination";
 
@@ -43,7 +43,7 @@ const ListS = ({ item }) => {
           count={data?.length / pageSize < 1 ? 1 : data?.length / pageSize}
           rowsPerPage={pageSize}
           color="primary"
-          variant="outlined"
+          sx={{ marginY: 3, marginX: "auto", paddingLeft: "40%" }}
         />
       ) : (
         <h4>Movie Not Found....</h4>

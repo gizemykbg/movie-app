@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { useLocation } from "react-router-dom";
 import { fetchFilteredData } from "../api/queries";
 import Spinners from "../components/Base/Spinners";
 import FilterCard from "../components/FilterSection/FilterElements/FilterCard";
 import List from "../components/Globals/List";
 
 function FilterPage() {
-  const { pathname } = useLocation();
   const [page, setPage] = useState(1);
   const [genreChosen, setGenreChosen] = useState([]);
   const [rateChosen, setRateChosen] = useState();

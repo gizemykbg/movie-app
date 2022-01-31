@@ -133,8 +133,6 @@ h6{
 button:hover {
     color: var(--primary-color);
     border-radius: 5px;
-    margin: 5px;
-    padding: 2px;
 }
 button {
     background-color: var(--border-color);

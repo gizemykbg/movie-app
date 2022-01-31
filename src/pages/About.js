@@ -20,6 +20,10 @@ function About() {
         <br />
         <Link to="https://styled-components.com/">Styled-Components</Link>
         <br />
+        <Link to="https://formik.org/">Formik</Link>
+        <br />
+        <Link to="https://www.npmjs.com/package/yup">Yup</Link>
+        <br />
       </div>
       <div>
         <img src={gif} alt="gif" />

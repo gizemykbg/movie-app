@@ -2,13 +2,13 @@ import React from "react";
 import { Table, TR, TD, TH, Label } from "./Tables.styles";
 
 export default function Tables({ items, genres }) {
-  const rows = items.map((el, index) => (
-    <TR key={index}>
-      {items.map((el, index) => (
-        <TD key={index}>{el}</TD>
-      ))}
-    </TR>
-  ));
+  // const rows = items.map((el, index) => (
+  //   <TR key={index}>
+  //     {items.map((el, index) => (
+  //       <TD key={index}>{el}</TD>
+  //     ))}
+  //   </TR>
+  // ));
   return (
     <>
       <Table>

@@ -29,6 +29,7 @@ function Profile() {
     } else {
       setData(movies);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortChosen]);
 
   return (
