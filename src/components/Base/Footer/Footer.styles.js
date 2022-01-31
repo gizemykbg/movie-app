@@ -10,7 +10,7 @@ const Content = styled.div`
   max-width: var(--max-width);
   height: 100%;
   margin: 0 auto;
-  color: var(--white);
+  color: var(--my-font-color);
   line-height: 1.5;
 
   p {

@@ -21,6 +21,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   flex: 1;
+  color: var(--my-font-color);
 `;
 const RightSide = styled.div`
   display: flex;

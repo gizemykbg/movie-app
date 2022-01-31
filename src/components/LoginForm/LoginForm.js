@@ -53,7 +53,7 @@ function LoginForm() {
               dispatch(success_login());
               navigation("/");
             } else {
-              alert("Username or password not correct.");
+              <div>User not foundd.....</div>;
             }
           }}
         >

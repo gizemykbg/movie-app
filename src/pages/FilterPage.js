@@ -8,6 +8,7 @@ import List from "../components/Globals/List";
 
 function FilterPage() {
   const { pathname } = useLocation();
+  const [page, setPage] = useState(1);
   const [genreChosen, setGenreChosen] = useState([]);
   const [rateChosen, setRateChosen] = useState();
   const [yearChosen, setYearChosen] = useState();
@@ -52,9 +53,9 @@ function FilterPage() {
   console.log(rateChosen, "rate");
 
   const { isLoading, data } = useQuery(
-    ["filteredData", { genreChosen, yearChosen, sortChosen, rateChosen }],
+    ["filteredData", { genreChosen, yearChosen, sortChosen, rateChosen, page }],
     async () =>
-      fetchFilteredData(genreChosen, rateChosen, yearChosen, sortChosen)
+      fetchFilteredData(genreChosen, rateChosen, yearChosen, sortChosen, page)
   );
 
   console.log(data);
@@ -77,7 +78,22 @@ function FilterPage() {
         <Spinners />
       ) : (
         <div>
-          <List item={data?.results} />
+          {data?.results?.length > 0 ? (
+            <>
+              <List item={data?.results} />
+              <button
+                className="loadmore-button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPage(page + 1);
+                }}
+              >
+                Load More
+              </button>
+            </>
+          ) : (
+            <h3>Movie Not Found...</h3>
+          )}
         </div>
       )}
     </>

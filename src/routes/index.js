@@ -4,6 +4,7 @@ import Search from "../pages/content/Search";
 import DetailPage from "../pages/DetailPage";
 import Profile from "../pages/Profile";
 import FilterPage from "../pages/FilterPage";
+import About from "../pages/About";
 
 const routes = [
   {
@@ -51,6 +52,14 @@ const routes = [
     isLogin: true,
     name: "Filter",
     element: FilterPage,
+    isNav: false,
+  },
+  {
+    id: 7,
+    path: "/about",
+    isLogin: true,
+    name: "About",
+    element: About,
     isNav: true,
   },
 ];

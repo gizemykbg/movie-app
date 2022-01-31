@@ -5,7 +5,8 @@ import { fetchSearch } from "../../api/queries";
 import useDebounce from "../../hooks/useDebounce";
 import SearchBar from "../../components/Globals/SearchBar";
 import Spinners from "../../components/Base/Spinners";
-import List from "../../components/Globals/List";
+import Error from "../../components/Base/Error";
+import ListS from "../../components/Globals/List/ListS";
 
 function Search() {
   // const { pathname } = useLocation();
@@ -25,6 +26,7 @@ function Search() {
 
   console.log(data);
   console.log(searchValue);
+
   return (
     <>
       <SearchBar
@@ -37,7 +39,7 @@ function Search() {
         <Spinners />
       ) : (
         <div>
-          <List item={data?.results} />
+          <ListS item={data?.results} />
         </div>
       )}
     </>

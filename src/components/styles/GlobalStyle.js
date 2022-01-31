@@ -83,15 +83,15 @@ body{
 
 body::-webkit-scrollbar{
     width: 9px;
-    background-color: #383838;
+    background-color: var(--my-color);
 }
 body::-webkit-scrollbar-thumb{
     border-radius: 10px;
-    background-color: #6b6b6b;
+    background-color: var(--my-color);
 }
 body::-webkit-scrollbar-track{
     border-radius: 10px;
-    background-color: #383838;
+    background-color:var(--may-font-color);
 }
 img{
     display: flex;
@@ -185,17 +185,6 @@ form {
       color: var(--white-color);
     }
   }
-  .ham-burger-menu{
-      position: absolute;
-      right: 5%;
-      top: 3%; 
-      display: none;
-      z-index: 15;
-      svg{
-          font-size: 3rem;
-      }
-    }
-
     .nav-toggle{
         transform: translateX(0);
         z-index: 20;
@@ -218,6 +207,15 @@ form {
 }
 .filter-card-body{
     background-color: var( --border-color);
+}
+.sort-box-profile{
+    float: right;
+    margin-right: 20px;
+    margin-top:5px;
+    padding: 5px;
+}
+.loadmore-button{
+    color: var(--my-font-color);
 }
 `;
 

@@ -2,10 +2,10 @@ import React from "react";
 import { Table, TR, TD, TH, Label } from "./Tables.styles";
 
 export default function Tables({ items, genres }) {
-  const rows = items.map((el, idx) => (
-    <TR key={idx}>
-      {items.map((el, idx) => (
-        <TD key={idx}>{el}</TD>
+  const rows = items.map((el, index) => (
+    <TR key={index}>
+      {items.map((el, index) => (
+        <TD key={index}>{el}</TD>
       ))}
     </TR>
   ));
@@ -27,17 +27,17 @@ export default function Tables({ items, genres }) {
         </thead>
         <tbody>
           {items?.map((item) => {
+            console.log(items);
             return (
               <TR key={item.id}>
                 <TH scope={item.id}>{item.id}</TH>
                 <TD>{item.title}</TD>
                 <TH scope={item.id}>
-                  {item.id}
                   <TD>
                     {item?.genre
                       ?.map((id) => genres.filter((genre) => genre.id === id))
-                      .map((item) => (
-                        <span key={item.id}>{item.genre} </span>
+                      .map((item, index) => (
+                        <label key={index}>{item[0].name}, </label>
                       ))}
                   </TD>
                 </TH>

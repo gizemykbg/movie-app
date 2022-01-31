@@ -3,28 +3,25 @@ import styled from "styled-components";
 export const TH = styled.th`
   padding: 10px;
   height: 100%;
-  background-color: var(--my-color);
   border-collapse: collapse;
   border-bottom: 2px solid;
-  border-bottom-color: var(--font-dark-color-2);
+  border-bottom-color: var(--my-color);
   color: var(--my-font-color);
 `;
 
 export const TR = styled.tr`
-  background-color: var(--border-color);
-  color: var(--font-light-color);
+  color: var(--my-font-color);
 `;
 
 export const TD = styled.td`
-  border-top: 1px solid var(--font-dark-color-2);
+  border: solid var(--my-color);
   text-align: center;
   padding: 8px;
-  background-color: var(--my-color);
   color: var(--my-font-color);
 `;
 
 export const Table = styled.table`
-  margin: 5px;
+  padding: 10px;
   table-layout: fixed;
   font-weight: 300;
   border-collapse: collapse;
@@ -32,7 +29,7 @@ export const Table = styled.table`
   display: table;
   box-shadow: 0 5px 10px var(--border-color);
   color: var(--primary-color);
-  border-bottom: var(--border-color2);
+  border-bottom: green;
   height: ${(props) => {
     switch (props.density) {
       case "low":

@@ -6,7 +6,7 @@ export const CardWrapper = styled.div`
   margin: 48px auto 0;
   width: 400px;
   font-family: Quicksand, arial, sans-serif;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px var(--border-color);
   border-radius: 5px;
 `;
 
@@ -52,7 +52,7 @@ export const CardInput = styled.input`
   font-size: 14px;
   border-top: 0;
   border-right: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   border-left: 0;
   transition: border-bottom-color 0.25s ease-in;
 
@@ -63,7 +63,7 @@ export const CardInput = styled.input`
 `;
 
 export const CardIcon = styled.span`
-  color: #666;
+  color: var(--my-color);
   cursor: pointer;
   opacity: 0.25;
   transition: opacity 0.25s ease-in;
@@ -100,7 +100,7 @@ export const CardButton = styled.button`
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--my-font-color);
   background-color: #e5195f;
   border: 0;
   border-radius: 35px;
@@ -109,8 +109,8 @@ export const CardButton = styled.button`
   transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 
   &:hover {
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
-    transform: translate(0, -5px);
+    box-shadow: 0 15px 15px var(--border-color);
+    transform: translate(0, 0.3px);
   }
 `;
 
@@ -118,12 +118,12 @@ export const CardLink = styled.a`
   display: inline-block;
   font-size: 12px;
   text-decoration: none;
-  color: #aaa;
-  border-bottom: 1px solid #ddd;
+  color: var(--my-font-color);
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   transition: color 0.25s ease-in;
 
   &:hover {
-    color: #777;
+    color: var(--my-color);
   }
 `;

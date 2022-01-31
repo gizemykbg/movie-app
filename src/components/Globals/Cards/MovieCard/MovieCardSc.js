@@ -14,7 +14,7 @@ const CardStyle = styled.div`
   padding: 3px;
   &:hover {
     box-shadow: 1px 1px 10px 6px var(--font-light-color);
-    transform: translateY(-10px) scale(1);
+    transform: translateY(-8px) scale(1);
     transition: all 0.3s ease-out;
   }
 
@@ -56,7 +56,7 @@ const CardStyle = styled.div`
       &:hover {
         color: var(--primary-color);
         background: var(--secondary-color);
-        transition: all 0.5s ease-out;
+        transition: all 0.3s ease-out;
       }
     }
   }

@@ -2,9 +2,11 @@ import requests from "../services/request";
 import instance from "../services/instance";
 import { API_KEY } from "../services/request";
 
-const fetchPopular = async () => {
+const fetchPopular = async (selected) => {
   try {
-    const { data } = await instance.get(requests.fetchPopular);
+    const { data } = await instance.get(
+      `/trending/all/${selected}?api_key=${API_KEY}&language=en-US`
+    );
     return data;
   } catch (error) {
     console.log(error);
@@ -60,11 +62,12 @@ const fetchFilteredData = async (
   genreChosen,
   rateChosen,
   yearChosen,
-  sortChosen
+  sortChosen,
+  page
 ) => {
   try {
     const { data } = await instance.get(
-      `/discover/movie/?api_key=${API_KEY}&with_genres=${genreChosen}&vote_average.gte=${rateChosen}&primary_release_year=${yearChosen}&sort_by=${sortChosen}`
+      `/discover/movie/?api_key=${API_KEY}&with_genres=${genreChosen}&vote_average.gte=${rateChosen}&primary_release_year=${yearChosen}&sort_by=${sortChosen}&page=${page}`
     );
     return data;
   } catch (error) {

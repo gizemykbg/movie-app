@@ -20,6 +20,7 @@ export const movieGenres = [
   { id: 37, name: "Western" },
 ];
 export const yearData = [
+  { year: 2021 },
   { year: 2020 },
   { year: 2019 },
   { year: 2018 },
