@@ -41,7 +41,7 @@ const MovieCard = ({ item }) => {
               className="card-button"
               onClick={() =>
                 dispatch(
-                  add_watchlist(item.id, item.genre, item.original_title)
+                  add_watchlist(item.id, item.original_title, item.genre)
                 )
               }
             >

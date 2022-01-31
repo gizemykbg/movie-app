@@ -10,7 +10,6 @@ function Discover() {
 
   return (
     <>
-      <div>nanannananan</div>
       {isLoading ? (
         <Spinners />
       ) : (

@@ -64,7 +64,7 @@ const fetchFilteredData = async (
 ) => {
   try {
     const { data } = await instance.get(
-      `/popular/movie/?api_key=${API_KEY}&with_genres=${genreChosen}&vote_average.gte=${rateChosen}&primary_release_year=${yearChosen}&sort_by=${sortChosen}`
+      `/discover/movie/?api_key=${API_KEY}&with_genres=${genreChosen}&vote_average.gte=${rateChosen}&primary_release_year=${yearChosen}&sort_by=${sortChosen}`
     );
     return data;
   } catch (error) {

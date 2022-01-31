@@ -11,7 +11,6 @@ function Popular() {
 
   return (
     <>
-      <div>nanannananan</div>
       {isLoading ? (
         <Spinners />
       ) : (

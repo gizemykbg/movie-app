@@ -3,7 +3,7 @@ import Login from "../pages/Login";
 import Search from "../pages/content/Search";
 import DetailPage from "../pages/DetailPage";
 import Profile from "../pages/Profile";
-import Filter from "../pages/Filter";
+import FilterPage from "../pages/FilterPage";
 
 const routes = [
   {
@@ -32,19 +32,13 @@ const routes = [
   },
   {
     id: 4,
-    path: "/filter",
-    isLogin: true,
-    name: "Filter",
-  },
-  {
-    id: 5,
     path: "/login",
     isLogin: false,
     name: "Login",
     element: Login,
   },
   {
-    id: 6,
+    id: 5,
     path: "/profile",
     isLogin: true,
     name: "Profile",
@@ -52,11 +46,11 @@ const routes = [
     isNav: false,
   },
   {
-    id: 7,
+    id: 6,
     path: "/filter",
     isLogin: true,
     name: "Filter",
-    element: Filter,
+    element: FilterPage,
     isNav: true,
   },
 ];

@@ -1,44 +1,48 @@
 import styled from "styled-components";
 
 export const TH = styled.th`
-  padding: 0.75em;
+  padding: 10px;
   height: 100%;
-  background-color: var (--background-dark-grey);
+  background-color: var(--my-color);
   border-collapse: collapse;
   border-bottom: 2px solid;
-  border-bottom-color: var(--border-color);
+  border-bottom-color: var(--font-dark-color-2);
+  color: var(--my-font-color);
 `;
 
 export const TR = styled.tr`
-  background-color: var(--font-light-color);
+  background-color: var(--border-color);
+  color: var(--font-light-color);
 `;
 
 export const TD = styled.td`
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid var(--font-dark-color-2);
   text-align: center;
   padding: 8px;
-  background-color: var(--border-color);
+  background-color: var(--my-color);
+  color: var(--my-font-color);
 `;
 
 export const Table = styled.table`
+  margin: 5px;
   table-layout: fixed;
-  font-weight: 400;
+  font-weight: 300;
   border-collapse: collapse;
   width: 100%;
   display: table;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  color: var(--font-light-color);
-  border-bottom: var(--border-color);
+  box-shadow: 0 5px 10px var(--border-color);
+  color: var(--primary-color);
+  border-bottom: var(--border-color2);
   height: ${(props) => {
     switch (props.density) {
       case "low":
-        return "90vh";
+        return "80vh";
       case "avg":
         return "45vh";
       case "high":
-        return "5px";
+        return "10px";
       default:
-        return "50vh";
+        return "20vh";
     }
   }};
 `;

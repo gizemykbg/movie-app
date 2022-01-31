@@ -15,10 +15,12 @@ import {
   Image,
 } from "./NavbarSc";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/login";
 import avatar from "../../../assets/avatar.png";
+import Dropdown from "../../Globals/Dropdown";
+import { label, options } from "../../Globals/Dropdown/dropdata";
 
 function Navbar() {
   const isLogin = useSelector((state) => state.login);
@@ -31,6 +33,15 @@ function Navbar() {
     navigation("/login");
     dispatch(logout());
   };
+  const [selectParams, setSelectParams] = useSearchParams();
+  const selectedItem = selectParams.get("selected") || "";
+
+  const handleSelect = (option, e) => {
+    setSelectParams({ selected: option.label });
+    navigation(`/filter?${selectedItem}`);
+  };
+
+  console.log(selectedItem);
 
   return (
     <Nav>
@@ -55,6 +66,13 @@ function Navbar() {
               </NavItem>
             ))}
           <ThemeToggler />
+          <Dropdown
+            primary
+            options={options}
+            selected={selectedItem}
+            label={label}
+            onChange={handleSelect}
+          />
           {isLogin === true ? (
             <>
               <Button onClick={handleLogout}>Logout</Button>

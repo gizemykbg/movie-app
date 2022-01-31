@@ -6,7 +6,7 @@ const SortBox = ({ sortChosen, handleClickSortBy }) => {
     <>
       <Card>
         <Card.Header as="h5">Sort</Card.Header>
-        <Card.Body>
+        <Card.Body className="filter-card-body">
           <Form>
             <Form.Label for="sort">
               <b>Sort By</b>

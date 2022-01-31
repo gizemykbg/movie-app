@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchGenre, fetchSelected } from "../api/queries";
@@ -14,19 +14,19 @@ import { movieGenres } from "../helpers/helpers";
 import FilterCard from "../components/FilterSection/FilterElements/FilterCard";
 
 function Home() {
-  const [selectParams, setSelectParams] = useSearchParams();
-  const selectedItem = selectParams.get("selected") || "";
+  // const [selectParams, setSelectParams] = useSearchParams();
+  // const selectedItem = selectParams.get("selected") || "";
   const navigation = useNavigate();
 
-  const handleSelect = (option, e) => {
-    setSelectParams({ selected: option.label });
-    e.preventDefault();
-    navigation(`/filter?${selectedItem}`);
-  };
-  const { isLoading, data } = useQuery(["selectData", selectedItem], async () =>
-    fetchSelected(selectedItem)
-  );
-  console.log(selectedItem);
+  // const handleSelect = (option, e) => {
+  //   setSelectParams({ selected: option.label });
+  //   navigation(`/filter?${selectedItem}`);
+  // };
+
+  // const { isLoading, data } = useQuery(["selectData", selectedItem], async () =>
+  //   fetchSelected(selectedItem)
+  // );
+  // console.log(selectedItem);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("query") || "";
@@ -41,27 +41,26 @@ function Home() {
 
   return (
     <>
-      <Dropdown
+      {/* <Dropdown
         primary
         options={options}
         selected={selectedItem}
         label={label}
         onChange={handleSelect}
-      />
+      /> */}
       <SearchBar
         handleChange={handleChange}
         value={searchValue}
-        isLoading={isLoading}
         onSubmit={handleSubmit}
       />
-      <FilterCard />
+      {/* 
       {isLoading ? (
         <Spinners />
       ) : (
         <div>
           <List item={data?.results} />
         </div>
-      )}
+      )}*/}
       <Popular />
       <Discover />
     </>

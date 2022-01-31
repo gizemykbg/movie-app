@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 export const Container = styled.div`
-  background-color: var(--secondary-color);
+  background-color: var(--border-color2);
+  margin: 3px;
   height: 50px;
-  width: 260px;
+  width: 220px;
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -28,7 +29,7 @@ export const CaratContainer = styled.img`
   height: 30px;
 `;
 export const SelectedLabel = styled.div`
-  color: var(--secondary-color);
+  color: var(--border-color);
 `;
 
 export const DropdownItem = styled.li`
@@ -44,7 +45,7 @@ export const DropdownItem = styled.li`
   cursor: pointer;
   border-bottom: 1px solid
     ${(props) => (props.last ? "transparent" : "rgba(255, 255, 255, 0.1)")};
-  &:hover {
+  :hover {
     color: var(--white);
     background-color: var(--font-light-color);
   }
@@ -53,6 +54,7 @@ export const DropdownItem = styled.li`
 export const DropdownIcon = styled.img`
   height: 20px;
   margin-right: 10px;
+  color: var(--secondary-color);
 `;
 
 export const ListWrapper = styled.div`

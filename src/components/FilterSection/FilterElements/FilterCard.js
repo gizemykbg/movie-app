@@ -3,7 +3,7 @@ import GenreBox from "./GenreBox";
 import RatingBox from "./RatingBox";
 import SortBox from "./SortBox";
 import YearBox from "./YearBox";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { fetchFilteredData } from "../../../api/queries";
 import { movieGenres, yearData } from "../../../helpers/helpers";
@@ -73,36 +73,33 @@ const FilterCard = ({
   // console.log(data);
   return (
     <div className="filter-sort">
-      <GenreBox
-        genres={movieGenres}
-        genreChosen={genreChosen}
-        handleClickGenre={handleClickGenre}
-      />
-      <br />
-      <RatingBox
-        ratingChosen={rateChosen}
-        handleChangeRating={handleChangeRating}
-      />
-      <br />
-      <YearBox
-        yearData={yearData}
-        yearChosen={yearChosen}
-        handleClickYear={handleClickYear}
-      />
-      <br />
-      <SortBox sortChosen={sortChosen} handleClickSortBy={handleClickSortBy} />
-      <br />
-      <Button variant="outline-primary" onClick={handleClickSearch} block>
-        Search
-      </Button>
-      <Button
-        variant="outline-primary"
-        type="reset"
-        onClick={handleReset}
-        block
-      >
-        Reset
-      </Button>
+      <Card className="filter-card">
+        <Card.Header>Filter</Card.Header>
+        <Card.Body>
+          <GenreBox
+            genres={movieGenres}
+            genreChosen={genreChosen}
+            handleClickGenre={handleClickGenre}
+          />
+          <br />
+          <RatingBox
+            ratingChosen={rateChosen}
+            handleChangeRating={handleChangeRating}
+          />
+          <br />
+          <YearBox
+            yearData={yearData}
+            yearChosen={yearChosen}
+            handleClickYear={handleClickYear}
+          />
+          <br />
+          <SortBox
+            sortChosen={sortChosen}
+            handleClickSortBy={handleClickSortBy}
+          />
+          <br />
+        </Card.Body>
+      </Card>
     </div>
   );
 };

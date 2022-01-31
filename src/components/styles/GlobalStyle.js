@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
     --secondary-color: #ff7675;
     --background-dark-color: #F1F1F1;
     --background-dark-grey: #e4e4e4;
-    --border-color: #cbced8;
+    --border-color: #c7c8d0;
+    --border-color2: #ececef;
     --background-light-color: #F1F1F1;
     --background-light-color-2: rgba(3,127,255,.3);
     --white-color: #151515;
@@ -37,7 +38,9 @@ const GlobalStyle = createGlobalStyle`
     --sidebar-dark-color: #E4E4E4;
     --scrollbar-bg-color: #383838;
     --scrollbar-thump-color: #6b6b6b;
-    --scrollbar-track-color: #383838;
+    --scrollbar-track-color: #9AAAD1;
+    --my-color: #ceced5;
+    --my-font-color: #28282d
 }
 .dark-theme{
     --primary-color: #007bff;
@@ -46,16 +49,19 @@ const GlobalStyle = createGlobalStyle`
     --background-dark-color: #10121A;
     --background-dark-grey: #191D2B;
     --border-color: #2e344e;
+    --border-color2: #2d3753;
     --background-light-color: #F1F1F1;
     --background-light-color-2: rgba(3,127,255,.3);
     --white-color: #FFF;
     --font-light-color: #a4acc4;
     --font-dark-color: #313131;
     --font-dark-color-2: #151515;
-    --sidebar-dark-color: #191D2B;
+    --sidebar-dark-color: #374462;
     --scrollbar-bg-color: #383838;
     --scrollbar-thump-color: #6b6b6b;
-    --scrollbar-track-color: #383838;
+    --scrollbar-track-color: #51596d;
+    --my-color:#717385;
+    --my-font-color: #e6e6ea
 }
 
 *{
@@ -201,13 +207,18 @@ form {
   }
 .filter-sort{
   float: left;
-  width: 20%;
+  width: 25%;
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 5px;
+  color: var(--font-light-color);
+  margin: 5px;
 }
-
-
-
+.filter-card{
+    background-color: var(--border-color);
+}
+.filter-card-body{
+    background-color: var( --border-color);
+}
 `;
 
 export default GlobalStyle;
