@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import gif from "../assets/movie-minions.gif";
 
 function About() {
@@ -8,21 +7,21 @@ function About() {
       <h2>About Capstone Project</h2>
       <div>
         <h4>Kullanılan Teknolojiler</h4>
-        <Link to="https://react-redux.js.org/">React-Redux</Link>
+        <a href="https://react-redux.js.org/">React-Redux</a>
         <br />
-        <Link to="https://github.com/rt2zz/redux-persist">Redux-Persist</Link>
+        <a href="https://github.com/rt2zz/redux-persist">Redux-Persist</a>
         <br />
-        <Link to="https://redux.js.org/understanding/history-and-design/middleware">
+        <a href="https://redux.js.org/understanding/history-and-design/middleware">
           Redux-Logger
-        </Link>
+        </a>
         <br />
-        <Link to="https://react-query.tanstack.com/">React-Query</Link>
+        <a href="https://react-query.tanstack.com/">React-Query</a>
         <br />
-        <Link to="https://styled-components.com/">Styled-Components</Link>
+        <a href="https://styled-components.com/">Styled-Components</a>
         <br />
-        <Link to="https://formik.org/">Formik</Link>
+        <a href="https://formik.org/">Formik</a>
         <br />
-        <Link to="https://www.npmjs.com/package/yup">Yup</Link>
+        <a href="https://www.npmjs.com/package/yup">Yup</a>
         <br />
       </div>
       <div>
