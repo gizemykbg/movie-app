@@ -4,7 +4,6 @@ import { Route, Routes as Routing } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Footer from "./components/Base/Footer";
 import Navbar from "./components/Base/Navbar";
-import Login from "./pages/Login";
 import Error from "./components/Base/Error";
 function App() {
   const isLogin = useSelector((state) => state.login);

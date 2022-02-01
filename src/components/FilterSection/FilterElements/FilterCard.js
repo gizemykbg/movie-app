@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import GenreBox from "./GenreBox";
 import RatingBox from "./RatingBox";
 import SortBox from "./SortBox";
 import YearBox from "./YearBox";
-import { Button, Card } from "react-bootstrap";
-import { useQuery } from "react-query";
-import { fetchFilteredData } from "../../../api/queries";
+import { Card } from "react-bootstrap";
 import { movieGenres, yearData } from "../../../helpers/helpers";
-import { useLocation, useNavigate } from "react-router-dom";
-import Spinners from "../../Base/Spinners";
-import { List } from "../../Globals/Dropdown/Dropdown.style";
 
 const FilterCard = ({
   sortChosen,

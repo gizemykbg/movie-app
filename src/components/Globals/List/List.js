@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { ListWrapper } from "./List.styles";
 import MovieCard from "../Cards/MovieCard";
-import Pagination from "@mui/material/Pagination";
 
 const List = ({ item }) => {
   return (

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const SearchBarWrapper = styled.form`
   border: 1px solid var(--border-color);

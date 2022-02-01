@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import Switch from "@material-ui/core/Switch";
-import { useDispatch } from "react-redux";
 // import { IconButton } from "@material-ui/core";
 
 function ThemeToggler({ value }) {

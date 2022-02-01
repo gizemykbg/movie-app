@@ -3,14 +3,12 @@ import {
   Wrapper,
   Container,
   CaratContainer,
-  SelectedLabel,
   DropdownItem,
   Label,
   ListWrapper,
   List,
 } from "./Dropdown.style";
 import icon from "../../../assets/icon.png";
-import { useNavigate } from "react-router-dom";
 
 const Item = ({ item, onClickItem }) => {
   const handleClick = () => onClickItem(item);

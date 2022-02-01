@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import routes from "../../../routes";
 import ThemeToggler from "../ThemeToggler";
 import {
@@ -6,7 +6,6 @@ import {
   NavbarContainer,
   NavIcon,
   NavLogo,
-  SideBarIcon,
   NavMenu,
   NavItem,
   NavLinks,
@@ -14,8 +13,7 @@ import {
   ImgWrap,
   Image,
 } from "./NavbarSc";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/login";
 import avatar from "../../../assets/avatar.png";
