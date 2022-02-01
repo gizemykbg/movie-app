@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+## Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Movie App
 
-## Available Scripts
+# [⚛️ Live Preview][⚛️ live preview]
 
-In the project directory, you can run:
+[⚛️ live preview]: https://movie-app-9sbhhqxpg-gizemykbg.vercel.app/login 'Deployed Site'
 
-### `npm start`
+❗❗❗ username: gizem , password: 12345678g ❗❗❗
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://user-images.githubusercontent.com/41079740/151964968-3a50fd60-34d0-493f-9def-1898692b544b.mp4
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🧰 Toolbox
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React Redux][react redux]
 
-### `npm run build`
+[react redux]: https://react-redux.js.org/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Styled Components][styled-components]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[styled-components]: https://styled-components.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Redux Persist][redux-persist]
 
-### `npm run eject`
+[redux-persist]: https://github.com/rt2zz/redux-persist
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [React Query][react-query]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[react-query]: https://react-query.tanstack.com/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Redux Logger][redux-logger]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[redux-logger]: https://redux.js.org/api/applymiddleware#example-custom-logger-middleware
 
-## Learn More
+- [Axios][axios]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[axios]: https://axios-http.com/docs/intro
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Yup, Formik
 
-### Code Splitting
+- [Custom Hooks][custom hooks]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[custom hooks]: https://usehooks.com/
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
